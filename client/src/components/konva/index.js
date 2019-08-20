@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Stage, Layer, Image, Transformer } from 'react-konva';
+import { Stage, Layer, Image, Transformer, Container } from 'react-konva';
 
 class KonvaImage extends Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class KonvaImage extends Component {
     }
     this.trRef = React.createRef()
     this.imageNode = React.createRef()
+    this.layer = React.createRef()
   }
 
   componentDidUpdate (prevprops) {
@@ -39,11 +40,15 @@ class KonvaImage extends Component {
     })
   }
 
+  getTransformedImage = () => {
+    return this.layer.current.toDataURL({ pixelRatio: 10 })
+  }
+
   render() {
     return (
       <Stage
-        width={window.innerWidth}
-        height={window.innerHeight}
+        width={500}
+        height={500}
         onMouseDown={e => {
           // deselect when clicked on empty area
           const clickedOnEmpty = e.target === e.target.getStage();
@@ -51,7 +56,7 @@ class KonvaImage extends Component {
             this.removeSelect()
           }
         }} >
-        <Layer>
+        <Layer ref={this.layer}>
           <Image
             x={this.state.x}
             y={this.state.y}

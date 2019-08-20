@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Canvas from './components/Canvas'
+import Canvas  from './components/Canvas'
+import PublishedImages from './components/PublishedImages'
 
 interface IRoutesProps {}
 
@@ -9,6 +10,7 @@ class Routes extends Component<IRoutesProps> {
     return(
       <Router>
         <Route exact path='/' component={Canvas} />
+        <Route  path='/images' component={PublishedImages} />
       </Router>
     )
   }
