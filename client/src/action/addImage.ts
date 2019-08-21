@@ -1,7 +1,8 @@
 import { ON_IMAGE_ADD_SUCCESS, 
-  ON_IMAGE_ADD_REQUEST,
+         ON_IMAGE_ADD_REQUEST,
          ON_IMAGE_GET_SUCCESS,
-         ON_IMAGE_GET_REQUEST }from './actiontypes'
+         ON_IMAGE_GET_REQUEST,
+         ON_IMAGE_TRANSFORM,}from './actiontypes'
 
  export interface AddImageAction {
    type: string
@@ -18,6 +19,11 @@ import { ON_IMAGE_ADD_SUCCESS,
     payload
   })
   
+  export const saveTransformImage = (payload: any): AddImageAction => ({
+    type:ON_IMAGE_TRANSFORM,
+    payload
+  })
+
   export const onImageGet = (payload: any): AddImageAction => ({
     type: ON_IMAGE_GET_REQUEST,
     payload

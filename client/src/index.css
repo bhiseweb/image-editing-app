@@ -15,3 +15,17 @@ code {
 .imageContainer {
   max-width: 25%;
 }
+.ImageUpload {
+  padding-left: 319px;
+  margin-top: 28px;
+}
+.ShowImages {
+  margin-left: 10px;
+}
+
+.tableImage {
+  width:75% 
+}
+.konvajs-content {
+  background-color: whitesmoke;
+}
