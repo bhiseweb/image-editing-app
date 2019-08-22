@@ -94,7 +94,6 @@ class KonvaImage extends Component <ICanvasProps, ICanvasState>{
             onClick={this.onSelect}
             onDragEnd={() => {
               if (this.imageNode) {
-                debugger
                 const x = this.imageNode.current.attrs.x
                 const y = this.imageNode.current.attrs.y
                 const width = this.imageNode.current.attrs.width
@@ -112,7 +111,6 @@ class KonvaImage extends Component <ICanvasProps, ICanvasState>{
           {this.state.selected && (
             <Transformer ref={this.trRef}
               onTransform={() => {
-                debugger
                 if (this.trRef) {
                   const x = this.trRef.current.node().x()
                   const y = this.trRef.current.node().y()
