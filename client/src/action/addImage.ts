@@ -2,7 +2,8 @@ import { ON_IMAGE_ADD_SUCCESS,
          ON_IMAGE_ADD_REQUEST,
          ON_IMAGE_GET_SUCCESS,
          ON_IMAGE_GET_REQUEST,
-         ON_IMAGE_TRANSFORM,}from './actiontypes'
+         ON_IMAGE_TRANSFORM,
+         ON_SESSION_CLEAR}from './actiontypes'
 
  export interface AddImageAction {
    type: string
@@ -31,5 +32,10 @@ import { ON_IMAGE_ADD_SUCCESS,
 
   export const onImageGetSuccess = (payload: any): AddImageAction => ({
     type: ON_IMAGE_GET_SUCCESS,
+    payload
+  })
+
+  export const onSessionClear = (payload: any) :AddImageAction => ({
+    type: ON_SESSION_CLEAR,
     payload
   })

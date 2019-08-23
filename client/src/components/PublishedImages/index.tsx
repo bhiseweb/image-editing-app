@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react"
 import { connect } from 'react-redux'
-import { onImageGet } from '../../action/addImage'
+import { onImageGet, onSessionClear } from '../../action/addImage'
 import { IImageStateRedux } from '../../reducers/imageReducer'
 
 interface ICanvasState {
@@ -8,6 +8,7 @@ interface ICanvasState {
 interface ICanvasProps {
   images:[]
   onImageGet: Function
+  onSessionClear: Function
 }
 interface ICanvasStateToProps {
   imageReducer: IImageStateRedux
@@ -16,6 +17,10 @@ class PublishedImages extends Component <ICanvasProps, ICanvasState> {
   
   componentDidMount() {
     this.props.onImageGet()
+  }
+
+  componentWillUnmount () {
+    this.props.onSessionClear()
   }
 
   render() {
@@ -44,6 +49,7 @@ const mapStateToProps = (state: ICanvasStateToProps) => ({
 
 const mapDispatchToProps = {
   onImageGet,
+  onSessionClear
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublishedImages);
