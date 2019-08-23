@@ -38,7 +38,6 @@ class Canvas extends Component<ICanvasProps, ICanvasState> {
       file: '',
       filename: '',
     }
-
     this.konvaImage = React.createRef()
   }
 
@@ -51,7 +50,6 @@ class Canvas extends Component<ICanvasProps, ICanvasState> {
     this.setState({filename: this.props.imageName,file: this.props.image})
   }
 
-
   public handleChange = (event: React.FormEvent<EventTarget>) => {
     const file = (event.target as HTMLInputElement).files
     const reader = new FileReader()
@@ -63,7 +61,6 @@ class Canvas extends Component<ICanvasProps, ICanvasState> {
           file: reader.result as string
         }
         this.props.onImageAddSuccess(uploadImage);
-
       }
     }
   }

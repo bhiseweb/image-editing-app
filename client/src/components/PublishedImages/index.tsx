@@ -27,9 +27,9 @@ class PublishedImages extends Component <ICanvasProps, ICanvasState> {
     return (
       <div className="container">
         {this.props.images.map((image: any, index: number) =>
-          <Fragment>
-            <div className="row">
-              <div className="col">
+          <Fragment key= {index}>
+            <div className="row" >
+              <div className="col" >
               <img className='imageContainer' src={`http://localhost:4000/${image.image}` } alt={image.name} />
               {image.name} <a className="btn btn-primary" href={`http://localhost:4000/${image.image}`} target="_blank">download</a>
               </div>
@@ -45,7 +45,6 @@ class PublishedImages extends Component <ICanvasProps, ICanvasState> {
 const mapStateToProps = (state: ICanvasStateToProps) => ({
   images: state.imageReducer.images,
 })
-
 
 const mapDispatchToProps = {
   onImageGet,

@@ -20,6 +20,7 @@ interface ICanvasProps {
   onTransform: Function
   image: any
 }
+
 class KonvaImage extends Component <ICanvasProps, ICanvasState>{
   private trRef: any
   private imageNode: any
@@ -66,7 +67,6 @@ class KonvaImage extends Component <ICanvasProps, ICanvasState>{
     return this.layer.current.toDataURL({ pixelRatio: 10 })
   }
   
-
   render() {
     return (
       <Stage
@@ -105,7 +105,6 @@ class KonvaImage extends Component <ICanvasProps, ICanvasState>{
                 this.props.onTransform(x, y, width, height, rotation, scaleX, scaleY)
               }
             }
-
             }
           />
           {this.state.selected && (
@@ -119,7 +118,6 @@ class KonvaImage extends Component <ICanvasProps, ICanvasState>{
                   const rotation = this.trRef.current.node().rotation()
                   const scaleX = this.trRef.current.node().scaleX()
                   const scaleY = this.trRef.current.node().scaleY()
-
                   this.props.onTransform(x, y, width, height, rotation, scaleX, scaleY)
                 }
               }

@@ -2,8 +2,7 @@ import {
   ON_IMAGE_ADD_SUCCESS,
   ON_IMAGE_GET_SUCCESS,
   ON_IMAGE_TRANSFORM,
-  ON_SESSION_CLEAR,
-} from '../action/actiontypes'
+  ON_SESSION_CLEAR, } from '../action/actiontypes'
 import { AddImageAction } from '../action/addImage'
 
 export interface IImageStateRedux {
